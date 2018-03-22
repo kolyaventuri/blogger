@@ -30,6 +30,8 @@ describe 'user creates a new article' do
 
         expect(page).to have_content(article_title)
         expect(page).to have_content(article_body)
+
+        expect(page).to have_content("Article '#{article_title}' Created!")
       end
     end
   end

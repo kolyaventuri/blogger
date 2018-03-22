@@ -22,6 +22,8 @@ describe 'user deletes an article' do
 
         expect(page).to_not have_link(article1.title)
         expect(page).to have_link(article2.title)
+
+        expect(page).to have_content("Article '#{article1.title}' Deleted!")
       end
     end
   end
