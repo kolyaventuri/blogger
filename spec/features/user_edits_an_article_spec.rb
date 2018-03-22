@@ -18,7 +18,7 @@ describe 'user edits an article' do
         visit article_path(@article1)
         click_link 'Edit'
 
-        expect(current_path).to eq(articles_edit_path)
+        expect(current_path).to eq(edit_article_path(@article1))
       end
     end
   end
