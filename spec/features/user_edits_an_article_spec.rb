@@ -29,7 +29,7 @@ describe 'user edits an article' do
         fill_in 'article[title]', with: 'New Title'
         fill_in 'article[body]', with: 'New Body'
 
-        click_link 'Edit'
+        click_on 'Update Article'
 
         expect(current_path).to eq(article_path(@article1))
         expect(page).to have_content 'New Title'
