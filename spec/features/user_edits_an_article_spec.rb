@@ -21,5 +21,20 @@ describe 'user edits an article' do
         expect(current_path).to eq(edit_article_path(@article1))
       end
     end
+
+    context 'they submit the edit' do
+      it 'updates the post' do
+        visit edit_article_path(@article1)
+
+        fill_in 'article[title]', with: 'New Title'
+        fill_in 'article[body]', with: 'New Body'
+
+        click_link 'Edit'
+
+        expect(current_path).to eq(article_path(@article1))
+        expect(page).to have_content 'New Title'
+        expect(page).to have_content 'New Body'
+      end
+    end
   end
 end
