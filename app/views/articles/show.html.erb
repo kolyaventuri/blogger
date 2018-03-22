@@ -1,6 +1,7 @@
 <h1><%= article.title %></h1>
 <p><%= article.body %></p>
 
+<%= render partial: 'comments/form', locals: { article: article, comment: comment } %>
 <h3>Comments</h3>
 <%= render partial: 'articles/comment', collection: article.comments.reverse %>
 <br />
