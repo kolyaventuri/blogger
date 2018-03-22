@@ -8,5 +8,6 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    render locals: { article: Article.new }
   end
 end
