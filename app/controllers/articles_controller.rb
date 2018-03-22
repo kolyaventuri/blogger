@@ -6,4 +6,7 @@ class ArticlesController < ApplicationController
   def show
     render locals: { article: Article.find(params[:id]) }
   end
+
+  def new
+  end
 end
