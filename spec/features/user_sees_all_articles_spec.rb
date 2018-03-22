@@ -2,6 +2,14 @@ require 'rails_helper'
 
 describe 'user sees all articles' do
   describe 'they visit /articles' do
+    before :all do
+      DatabaseCleaner.clean
+    end
+
+    after :all do
+      DatabaseCleaner.clean
+    end
+
     it 'displays all articles' do
       article1 = Article.create!(title: 'Title 1', body: 'Body 1')
       article2 = Article.create!(title: 'Title 2', body: 'Body 2')

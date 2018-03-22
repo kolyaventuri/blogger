@@ -2,6 +2,14 @@ require 'rails_helper'
 
 describe 'user sees one article' do
   describe 'they link from the articles index' do
+    before :all do
+      DatabaseCleaner.clean
+    end
+    
+    after :all do
+      DatabaseCleaner.clean
+    end
+
     it 'displays information for one article' do
       article = Article.create!(title: 'New Title', body: 'New Body')
 

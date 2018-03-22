@@ -5,6 +5,14 @@ describe 'user creates a new article' do
   article_body = 'This an article.'
 
   describe 'they link from the articles index' do
+    before :all do
+      DatabaseCleaner.clean
+    end
+
+    after :all do
+      DatabaseCleaner.clean
+    end
+
     context 'they fill in a title and body' do
       it 'creates a new article' do
         visit '/articles'
