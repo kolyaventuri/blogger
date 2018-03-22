@@ -5,7 +5,9 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    render locals: { article: article }
+    comment = Comment.new
+    comment.article_id = article.id
+    render locals: { article: article, comment: comment  }
   end
 
   def new
