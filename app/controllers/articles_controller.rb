@@ -1,13 +1,11 @@
 class ArticlesController < ApplicationController
 
-  before_action :set_article, only: [:show, :destroy, :edit]
-
   def index
     render locals: { articles: Article.all }
   end
 
   def show
-    render locals: { article: @article }
+    render locals: { article: article }
   end
 
   def new
@@ -21,12 +19,12 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article.destroy
+    article.destroy
     redirect_to articles_path
   end
 
   def edit
-    render locals: { article: @article }
+    render locals: { article: article }
   end
 
   def update
@@ -40,7 +38,7 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :body)
   end
 
-  def set_article
+  def article
     @article = Article.find(params[:id])
   end
 end
