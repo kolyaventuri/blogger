@@ -18,7 +18,7 @@ describe 'user deletes an article' do
         visit article_path(article1)
         click_link 'Delete'
 
-        expect(current_path).to eq(article_path)
+        expect(current_path).to eq(articles_path)
 
         expect(page).to_not have_link(article1.title)
         expect(page).to have_link(article2.title)
